@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainEngineLibary", "18xxLibrary\TrainEngineLibary.csproj", "{DA15AA05-42C4-4018-9BC6-ACD3C2920369}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardViewer", "BoardViewer\BoardViewer.csproj", "{F7EEEFF4-89D0-4CAF-9D88-8761854AB196}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA15AA05-42C4-4018-9BC6-ACD3C2920369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA15AA05-42C4-4018-9BC6-ACD3C2920369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA15AA05-42C4-4018-9BC6-ACD3C2920369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA15AA05-42C4-4018-9BC6-ACD3C2920369}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7EEEFF4-89D0-4CAF-9D88-8761854AB196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7EEEFF4-89D0-4CAF-9D88-8761854AB196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7EEEFF4-89D0-4CAF-9D88-8761854AB196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7EEEFF4-89D0-4CAF-9D88-8761854AB196}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
