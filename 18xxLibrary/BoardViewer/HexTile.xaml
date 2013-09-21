@@ -4,26 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="404" d:DesignWidth="350">
-    <Grid>
-        <Polygon
-            Points="2,102 175,2 348,102 348,302 175,402 2,302"
-            Stroke="Black" 
-            StrokeThickness="4">
-            <Polygon.Fill>
-                <SolidColorBrush Color="Green" Opacity="1.0"/>
-            </Polygon.Fill>
-            <Polygon.RenderTransform>
-                <RotateTransform CenterX="175" CenterY="202" Angle="180" />
-            </Polygon.RenderTransform>
+             RenderTransformOrigin="0,0"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center"
+             d:DesignHeight="0" d:DesignWidth="0">
+    <UserControl.RenderTransform>
+        <RotateTransform Angle="0" />
+    </UserControl.RenderTransform>
+    <Grid Margin="0,0,-225,-200">
+        <Polygon Name="TileBackground"
+            Grid.ZIndex="0"
+            Points="100,-173 200,0 100,173, -100,173 -200,0 -100,-173">
         </Polygon>
-        <Path Stroke="White" StrokeThickness="26"  
-  Data="M 90,52 A 100,100 0 0 0 264,52" />
-        <Path Stroke="White" StrokeThickness="26"  
-  Data="M 2,202 A 300,300 0 0 0 264,52" />
-        <Path Stroke="Black" StrokeThickness="20"  
-  Data="M 90,52 A 100,100 0 0 0 264,52" />
-        <Path Stroke="Black" StrokeThickness="20"  
-  Data="M 2,202 A 300,300 0 0 0 264,52" />
+        <Grid Name="PathGrid" />
+        <Polygon
+            Points="100,-173 200,0 100,173, -100,173 -200,0 -100,-173"
+            Stroke="Black"
+            StrokeThickness="5">
+        </Polygon>
     </Grid>
 </UserControl>
