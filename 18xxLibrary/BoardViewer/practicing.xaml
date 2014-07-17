@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="BoardViewer.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BoardViewer"
+             mc:Ignorable="d" 
+             d:DesignHeight="3030" d:DesignWidth="1750">
+    <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+            <Polygon Points="20, 100 20, 40 70, 70 100, 200" Fill="BlueViolet" Stroke="Black"></Polygon>
+        <local:HexTile Grid.Column="1" Grid.Row="2" Rotation="2" Paths="1,2 3,4 1,3 2,4" Color="DarkGoldenrod"/>
+        <local:HexTile Grid.Column="3" Grid.Row="2" Color="Green" Rotation="0" Paths="0,c 1,c 2,c"/>
+        <local:HexTile Grid.Column="2" Grid.Row="3" Color="Yellow" Paths="0,1" Rotation="2"/>
+    </Grid>
+</UserControl>

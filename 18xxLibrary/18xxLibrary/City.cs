@@ -5,6 +5,7 @@ using System.Text;
 
 namespace TrainEngineLibrary
 {
+    //needs to be associated with a tile and a location on the board
     class City
     {
         // The numeric value that is added to a route containing this city.
@@ -13,7 +14,14 @@ namespace TrainEngineLibrary
             get;
             private set;
         }
-        
+
+        // Because we're creating tiles as they're laid, a city tile has a defined location/city name.
+        public String Name
+        {
+            get;
+            private set;
+        }
+
         // The number of token spots in the city.
         public int Size
         {

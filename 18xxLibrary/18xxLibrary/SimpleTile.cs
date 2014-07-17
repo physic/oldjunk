@@ -46,7 +46,6 @@ namespace TrainEngineLibrary
             HashSet<int> result = new HashSet<int>(exits);
             result.Remove(edge);
             return result;
-            
         }
     }
 }

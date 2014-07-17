@@ -40,11 +40,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Board.cs" />
+    <Compile Include="BoardInterface.cs" />
     <Compile Include="City.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="CompanyInterface.cs" />
+    <Compile Include="InvalidTransactionException.cs" />
+    <Compile Include="Phase.cs" />
     <Compile Include="SimpleCityTile.cs" />
     <Compile Include="SimpleTile.cs" />
+    <Compile Include="TicTacToeTransaction.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transaction.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
