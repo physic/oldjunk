@@ -28,8 +28,18 @@ namespace BoardViewer
         protected const int Z_BLACK =            4;
         protected const int Z_BLACK_CIRCLE =     5;
 
+        public class Constants : StaticResourceHolder<Constants>
+        {
+            public const double HEX_TILE_RADIUS_X = 2 * 100;
+            public const double HEX_EDGE_LENGTH = 200;
+            public const int HEX_SIDES = 6;
+            public static readonly PointCollection HEX_POINTS = new PointCollection(Util.GetPolygonCoordinates(HEX_SIDES, HEX_EDGE_LENGTH));
+            
+        }
+
         public HexTile()
         {
+            this.Resources = Constants.Instance;
             InitializeComponent();
         }
 
@@ -70,19 +80,28 @@ namespace BoardViewer
                 {
                     Ellipse ew = new Ellipse();
                     ew.Fill = new SolidColorBrush(Colors.White);
-                    ew.Width = ew.Height = 30;
+                    ew.Width = ew.Height = 126;
                     ew.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
                     ew.VerticalAlignment = System.Windows.VerticalAlignment.Top;
-                    ew.Margin = new Thickness(-15,-15,0,0);
-                    Grid.SetZIndex(ew, Z_WHITE_CIRCLE);
+                    ew.Margin = new Thickness(ew.Width / -2, ew.Height / -2, 0, 0);
+                    Grid.SetZIndex(ew, 0);
                     whites.Insert(0, ew);
+
+                    Ellipse ew2 = new Ellipse();
+                    ew2.Fill = new SolidColorBrush(Colors.White);
+                    ew2.Width = ew2.Height = ew.Width - 16;
+                    ew2.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
+                    ew2.VerticalAlignment = System.Windows.VerticalAlignment.Top;
+                    ew2.Margin = new Thickness(ew2.Width / -2, ew2.Height / -2, 0, 0);
+                    Grid.SetZIndex(ew2, 20);
+                    whites.Insert(0, ew2);
                     Ellipse eb = new Ellipse();
                     eb.Fill = new SolidColorBrush(Colors.Black);
-                    eb.Width = eb.Height = 20;
+                    eb.Width = eb.Height = ew.Width - 10;
                     eb.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
                     eb.VerticalAlignment = System.Windows.VerticalAlignment.Top;
-                    eb.Margin = new Thickness(-10,-10,0,0);
-                    Grid.SetZIndex(eb, Z_BLACK_CIRCLE);
+                    eb.Margin = new Thickness(eb.Width / -2, eb.Height / -2, 0, 0);
+                    Grid.SetZIndex(eb, 16);
                     blacks.Add(eb);
                 }
 
@@ -98,6 +117,12 @@ namespace BoardViewer
             }
         }
         #endregion
+
+        public String Id
+        {
+            get { return IdBlock.Text; }
+            set { IdBlock.Text = value; }
+        }
 
         public Color Color
         {
@@ -186,11 +211,11 @@ namespace BoardViewer
 
         private String[] sPts =
             { "0,175",
-              "-150,87",
-              "-150,-87",
+              "-150,87.5",
+              "-150,-87.5",
               "0,-175",
-              "150,-87",
-              "150,87"
+              "150,-87.5",
+              "150,87.5"
             };
     }
 }

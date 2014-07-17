@@ -12,13 +12,21 @@
         <RotateTransform Angle="0" />
     </UserControl.RenderTransform>
     <Grid Margin="0,0,-225,-200">
+        <TextBlock Name="IdBlock"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="10,125,130,35"
+                   FontFamily="Arial"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   Grid.ZIndex="5"/>
         <Polygon Name="TileBackground"
             Grid.ZIndex="0"
-            Points="100,-173 200,0 100,173, -100,173 -200,0 -100,-173">
+            Points="{StaticResource HEX_POINTS}">
         </Polygon>
         <Grid Name="PathGrid" />
         <Polygon
-            Points="100,-173 200,0 100,173, -100,173 -200,0 -100,-173"
+            Points="{StaticResource HEX_POINTS}"
             Stroke="Black"
             StrokeThickness="5">
         </Polygon>

@@ -10,8 +10,14 @@ namespace TrainEngineLibrary
     {
         public Dictionary<Tuple<int, int>, Tile> map;
 
-        public Tile getTileFromMap(int x, int y);
+        public Tile getTileFromMap(int x, int y)
+        {
+            return map[Tuple.Create(x, y)];
+        }
 
-        public bool isLegalBorder(int x, int y);
+        public bool isLegalBorder(int x, int y, int direction)
+        {
+            return true;
+        }
     }
 }
