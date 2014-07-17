@@ -1,4 +1,4 @@
-function newgame(count) {
+function newgame(count, mediator) {
  /*
   * Private functions
   */
@@ -16,18 +16,19 @@ function newgame(count) {
     privates.push({id: 0, name: "Mountain Engineers", price: 40, abilities: ["mountainBonus"], swag: {}});
     privates.push({id: 0, name: "Pittsburgh Steel Mill", price: 40, abilities: ["Pittsburgh"], swag: {}});
     privates.push({id: 0, name: "Train Station", price: 80, abilities: ["extraToken"], swag: {}});
-    if(richUncle)
+    if(typeof(richUncle) !== undefined) //fix this... pass in richUncle bool?
       privates.push({id: 0, name: "Loan from a Rich Uncle", price: 100, abilities: [], swag: {}});
     return privates;
   }
   
+  var x = "new game";
   function initializeCompanies() {
     var companies = [];
     companies.push({id: 00, name: "Alton & Southern", media: "Alton"});
     companies.push({id: 01, name: "Arcade & Attica", media: "Arcade"});
     companies.push({id: 02, name: "Bessemer", media: "Bessemer"});
     companies.push({id: 03, name: "Boston & Albany", media: "BA"});
-    companies.push({id: 04, name: "Chocago Belt", media: "Belt"});
+    companies.push({id: 04, name: "Chicago Belt", media: "Belt"});
     companies.push({id: 05, name: "Delaware & Lackawanna", media: "Lackawanna"});
     companies.push({id: 06, name: "Elgin, Joliet, and Fugumagoo", media: "Joliet"});
     companies.push({id: 07, name: "Grand Trunk", media: "Trunk"});
@@ -51,11 +52,28 @@ function newgame(count) {
   */
   var playerCount = count;
   var players = [];
-  var moneyPerPlayer = ceil(1260/playerCount); // Has factors 1-10. But who am I to stop you playing an 11 player game.
+  var moneyPerPlayer = Math.ceil(1260/playerCount); // Has factors 1-10. But who am I to stop you playing an 11 player game.
   for(var i=1; i<=playerCount;i++) {
-    players.push({name: arguments[i], id: i-1, shares:{}, shareCount:0, privates: []});
+    players.push({name: arguments[i], id: i-1, shares:{}, shareCount:0, privates: [], cash:moneyPerPlayer});
   }
   var kitty = 200;
   var availablePrivates = initializePrivates();
   var availableCompanies = initializeCompanies();
-});
+  var gamePhase="Initial Auction";
+  var playerTurn=0;
+  var auctionTurn=0;
+  var companyTurn; //this will be a pain :(
+  function auctionHandler(player, bidAmt, privateComp){
+	if(gamePhase!=="Initial Auction")
+		return false;
+	if(player.cash<bidAmt)
+		return false;
+  
+  
+  }
+  mediator.subscribe("bid",auctionHandler);
+  function buttonHandler(){alert(this.x);
+  }
+  var a = {x:"abc"};
+  mediator.subscribe("testClick", buttonHandler);
+};

@@ -1,10 +1,15 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="common.css" />
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="company.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="game.js"></script>
+<script src="mediator.js"></script>
+<script>
+newgame(4,mediator);
+</script>
 </head>
 <body>
+<button id="testButton" onClick="mediator.publish('testClick');">Click me</button>
 <div class="openmarket">
   <div id="foo"></div>
 </div>
